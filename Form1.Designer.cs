@@ -241,7 +241,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Калькулятор веса";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
