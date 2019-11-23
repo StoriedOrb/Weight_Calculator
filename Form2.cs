@@ -16,5 +16,10 @@ namespace WeightCalculator
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
