@@ -8,196 +8,197 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WeightCalculator
+namespace Create_your_lunch
 {
-    public partial class Form1 : Form
-    {   
-        public Form1()
+    public partial class Create_your_lunch : Form
+    {
+
+        int FP = 0, HP = 0, MP = 0, BBQ = 0, CP = 0, BM = 0, P = 0, R = 0, BT = 0, MF = 0, CR = 0, TL = 0, FR = 0, SY = 0, SL = 0, DCurier = 0, DCycle = 0, DCar = 0, DHelicopter = 0;
+
+        public Create_your_lunch()
         {
             InitializeComponent();
         }
 
-        private void Male_CheckedChanged(object sender, EventArgs e)
+        private void groupBox4_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void ResultButton_Click(object sender, EventArgs e)
+        private void checkBox37_CheckedChanged(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().ShowDialog();
-            this.Show();
 
-            double IMT, weight, height, age, koef, idealweight;
+        }
 
-            height = Convert.ToDouble(Height.Text);
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-            if (height > 230)                                       //Ограничение роста
+        private void Clean_Click(object sender, EventArgs e)       //Кнопка очистить
+        {
+            CheckList.Clear();
+            FamilyPizza.Checked = false;
+            HavaiPizza.Checked = false;
+            MeatPizza.Checked = false;
+            PizzaBBQ.Checked = false;
+            CheesePizza.Checked = false;
+            BigMac.Checked = false;
+            Potato.Checked = false;
+            Royal.Checked = false;
+            BigTasty.Checked = false;
+            MacFlury.Checked = false;
+            CaliforniaRoll.Checked = false;
+            TempuraLosos.Checked = false;
+            FiladelfiaRoll.Checked = false;
+            SushiYgor.Checked = false;
+            SushiLosos.Checked = false;
+            Curier.Checked = false;
+            Curier_cycle.Checked = false;
+            Curier_car.Checked = false;
+            Curier_helicopter.Checked = false;
+        }
+
+        private void Check_Click(object sender, EventArgs e)
+        {
+            int itog;
+
+            if (FamilyPizza.Checked == true)
             {
-                MessageBox.Show("Ваш рост не может быть таким.");
+                CheckList.Text += "Семейная пицца – 300 рублей" + Environment.NewLine;
 
-                Height.Clear();
+                FP = 300;
             }
 
-            weight = Convert.ToDouble(Weight.Text);
-
-            if (weight > 200)                                      //Ограничение веса
+            if (HavaiPizza.Checked == true)
             {
-                MessageBox.Show("Ваш вес не может быть таким.");
+                CheckList.Text += "Гавайская пицца – 330 рублей" + Environment.NewLine;
 
-                Weight.Clear();
+                HP = 330;
             }
 
-            age = Convert.ToDouble(Age.Text);
-
-            if (age > 100)                                         //Ограничение возраста
+            if (MeatPizza.Checked == true)
             {
-                MessageBox.Show("Ваш возраст не может быть таким.");
+                CheckList.Text += "Мясная пицца – 350 руб" + Environment.NewLine;
 
-                Age.Clear();
+                MP = 350;
             }
 
-            IMT = weight / (height * height);                        //Индекс массы тела по Кетле
-
-            if (IMT < 18.5)
+            if (PizzaBBQ.Checked == true)
             {
-                ResultText.Text += "По формуле Кетле у вас Дефицит массы тела" + Environment.NewLine;
+                CheckList.Text += "Пицца BBQ – 400 рублей" + Environment.NewLine;
+
+                BBQ = 400;
             }
 
-            if (IMT > 18.5 && IMT < 24.9)
+            if (CheesePizza.Checked == true)
             {
-                ResultText.Text += "По формуле Кетле у вас Нормальная масса тела" + Environment.NewLine;
+                CheckList.Text += "Cырная пицца  – 280 рублей" + Environment.NewLine;
+
+                CP = 280;
             }
 
-            if (IMT > 25 && IMT < 29.9)
+            if (BigMac.Checked == true)
             {
-                ResultText.Text += "По формуле Кетле у вас Избыточная масса тела" + Environment.NewLine;
+                CheckList.Text += "Биг мак – 140 рублей" + Environment.NewLine;
+
+                BM = 140;
             }
 
-            if (IMT > 30 && IMT < 34.9)
+            if (Potato.Checked == true)
             {
-                ResultText.Text += "По формуле Кетле у вас Ожирение 1-ой степени" + Environment.NewLine;
+                CheckList.Text += "Картофель фри – 100 рублей" + Environment.NewLine;
+
+                P = 100;
             }
 
-            if (IMT > 35 && IMT < 39.9)
+            if (Royal.Checked == true)
             {
-                ResultText.Text += "По формуле Кетле у вас Ожирение 1-ой степени" + Environment.NewLine;
+                CheckList.Text += "Роял бургер – 200 рублей" + Environment.NewLine;
+
+                R = 200;
             }
 
-            if (IMT > 40)
+            if (BigTasty.Checked == true)
             {
-                ResultText.Text += "По формуле Кетле у вас Ожирение 1-ой степени" + Environment.NewLine;
+                CheckList.Text += "Биг тэйсти – 250 рублей" + Environment.NewLine;
+
+                BT = 250;
+            }
+
+            if (MacFlury.Checked == true)
+            {
+                CheckList.Text += "Мак флури – 120 рублей" + Environment.NewLine;
+
+                MF = 120;
+            }
+
+            if (CaliforniaRoll.Checked == true)
+            {
+                CheckList.Text += "Калифорния ролл – 250 рублей" + Environment.NewLine;
+
+                CR = 250;
+            }
+
+            if (TempuraLosos.Checked == true)
+            {
+                CheckList.Text += "Темпура лосось – 300 рублей" + Environment.NewLine;
+
+                TL = 300;
+            }
+
+            if (FiladelfiaRoll.Checked == true)
+            {
+                CheckList.Text += "Филадельфия ролл – 300 рублей" + Environment.NewLine;
+
+                FR = 300;
+            }
+
+            if (SushiYgor.Checked == true)
+            {
+                CheckList.Text += "Суши с угрём – 80 рублей" + Environment.NewLine;
+
+                SY = 80;
+            }
+
+            if (SushiLosos.Checked == true)
+            {
+                CheckList.Text += "Суши с лососем – 80 рублей" + Environment.NewLine;
+
+                SL = 80;
             }
             
-
-            if (less15.Checked == true)                            //Формула Крефа для расчёта идеального веса
+            if (Curier.Checked == true)
             {
-                koef = 0.9;
+                CheckList.Text += "Доставка – Бесплатно" + Environment.NewLine;
 
-                if (height < 155)
-                {
-                    idealweight = height - 95 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
-
-                if (height > 155 && height < 175)
-                {
-                    idealweight = height - 100 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
-
-                if (height > 175)
-                {
-                    idealweight = height - 110 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
+                DCurier = 0;
             }
-
-            if (ot15do17.Checked == true)
+            
+            if (Curier_cycle.Checked == true)
             {
-                koef = 1.0;
+                CheckList.Text += "Доставка – 100 рублей" + Environment.NewLine;
 
-                if (height < 155)
-                {
-                    idealweight = height - 95 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
-
-                if (height > 155 && height < 175)
-                {
-                    idealweight = height - 100 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
-
-                if (height > 175)
-                {
-                    idealweight = height - 110 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
+                DCycle = 100;
             }
-
-            if (More17.Checked == true)
+            
+            if (Curier_car.Checked == true)
             {
-                koef = 1.1;
+                CheckList.Text += "Доставка – 250 рублей" + Environment.NewLine;
 
-                if (height < 155)
-                {
-                    idealweight = height - 95 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
-
-                if (height > 155 && height < 175)
-                {
-                    idealweight = height - 100 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
-
-                if (height > 175)
-                {
-                    idealweight = height - 110 + (age / 10) * 0.9 * koef;
-
-                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine;
-                }
+                DCar = 250;
             }
-
-            if (Male.Checked == true)                                     //Расчет идеального веса по формуле Купера для мужчин
+            
+            if (Curier_helicopter.Checked == true)
             {
-                idealweight = (height * 4.0 / 2.54 - 128) * 0.453;
+                CheckList.Text += "Доставка – 5000 рублей" + Environment.NewLine;
 
-                ResultText.Text += "Ваш идеальный вес по формуле Купера = " + idealweight + "кг" + Environment.NewLine;
+                DHelicopter = 5000;  
             }
+            
+            itog = FP + HP + MP + BBQ + CP + BM + P + R + BT + MF + CR + TL + FR + SY + SL + DCurier + DCycle + DCar + DHelicopter;
 
-            if (Female.Checked == true)                                     //Расчет идеального веса по формуле Купера для женщин
-            {
-                idealweight = (height * 3.5 / 2.54 - 108) * 0.453;
-
-                ResultText.Text += "Ваш идеальный вес по формуле Купера = " + idealweight + "кг" + Environment.NewLine;
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+            CheckList.Text += "Итог:" + itog + "рублей";
+        } 
     }
 }
