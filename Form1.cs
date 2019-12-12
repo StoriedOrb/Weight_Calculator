@@ -8,197 +8,600 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Create_your_lunch
+namespace WeightCalculator
 {
-    public partial class Create_your_lunch : Form
-    {
-
-        int FP = 0, HP = 0, MP = 0, BBQ = 0, CP = 0, BM = 0, P = 0, R = 0, BT = 0, MF = 0, CR = 0, TL = 0, FR = 0, SY = 0, SL = 0, DCurier = 0, DCycle = 0, DCar = 0, DHelicopter = 0;
-
-        public Create_your_lunch()
+    public partial class Form1 : Form
+    {   
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
+        private void Male_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox37_CheckedChanged(object sender, EventArgs e)
+        private void ResultButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            new Form2().ShowDialog();
+
+            this.Show();
+
+
+            double IMT, weight, height, age, koef, idealweight, OBSR, RK, Raznica;
+
+            height = Convert.ToDouble(Height.Text);
+
+            if (height > 230)                                       //Ограничение роста
+            {
+                MessageBox.Show("Ваш рост не может быть таким.");
+
+                Height.Clear();
+            }
+
+            weight = Convert.ToDouble(Weight.Text);
+
+            if (weight > 200)                                      //Ограничение веса
+            {
+                MessageBox.Show("Ваш вес не может быть таким.");
+
+                Weight.Clear();
+            }
+
+            age = Convert.ToDouble(Age.Text);
+
+            if (age > 100)                                         //Ограничение возраста
+            {
+                MessageBox.Show("Ваш возраст не может быть таким.");
+
+                Age.Clear();
+            }
+
+            IMT = weight / (height * height);                        //Индекс массы тела по Кетле
+
+            if (IMT < 18.5)
+            {
+                ResultText.Text += "По формуле Кетле у вас Дефицит массы тела" + Environment.NewLine;
+            }
+
+            if (IMT > 18.5 && IMT < 24.9)
+            {
+                ResultText.Text += "По формуле Кетле у вас Нормальная масса тела" + Environment.NewLine;
+            }
+
+            if (IMT > 25 && IMT < 29.9)
+            {
+                ResultText.Text += "По формуле Кетле у вас Избыточная масса тела" + Environment.NewLine;
+            }
+
+            if (IMT > 30 && IMT < 34.9)
+            {
+                ResultText.Text += "По формуле Кетле у вас Ожирение 1-ой степени" + Environment.NewLine;
+            }
+
+            if (IMT > 35 && IMT < 39.9)
+            {
+                ResultText.Text += "По формуле Кетле у вас Ожирение 2-ой степени" + Environment.NewLine;
+            }
+
+            if (IMT > 40)
+            {
+                ResultText.Text += "По формуле Кетле у вас Ожирение 3-ой степени" + Environment.NewLine;
+            }
+            
+
+            if (less15.Checked == true)                            //Формула Крефа для расчёта идеального веса для запястья > 15
+            {
+                koef = 0.9;
+
+                if (height < 155)
+                {
+                    idealweight = height - 95 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (height > 155 && height < 175)
+                {
+                    idealweight = height - 100 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (height > 175)
+                {
+                    idealweight = height - 110 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+            }
+
+            if (ot15do17.Checked == true)                           //Формула Крефа для расчёта идеального веса для запястья от 15 до 17
+            {
+                koef = 1.0;
+
+                if (height < 155)
+                {
+                    idealweight = height - 95 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (height > 155 && height < 175)
+                {
+                    idealweight = height - 100 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (height > 175)
+                {
+                    idealweight = height - 110 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+            }
+
+            if (More17.Checked == true)                               //Формула Крефа для расчёта идеального веса для запястья < 15
+            {
+                koef = 1.1;
+
+                if (height < 155)
+                {
+                    idealweight = height - 95 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (height > 155 && height < 175)
+                {
+                    idealweight = height - 100 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (height > 175)
+                {
+                    idealweight = height - 110 + (age / 10) * 0.9 * koef;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес по формуле Крефа = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+            }
+
+            if (Male.Checked == true)                                     //Расчет идеального веса по формуле Купера для мужчин
+            {
+                idealweight = (height * 4.0 / 2.54 - 128) * 0.453;
+
+                if (weight > idealweight)
+                {
+                    Raznica = weight - idealweight;
+                }
+                else
+                {
+                    Raznica = idealweight - weight;
+                }
+
+                ResultText.Text += "Ваш идеальный вес по формуле Купера = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+            }
+
+            if (Female.Checked == true)                                     //Расчет идеального веса по формуле Купера для женщин
+            {
+                idealweight = (height * 3.5 / 2.54 - 108) * 0.453;
+
+                if (weight > idealweight)
+                {
+                    Raznica = weight - idealweight;
+                }
+                else
+                {
+                    Raznica = idealweight - weight;
+                }
+
+                ResultText.Text += "Ваш идеальный вес по формуле Купера = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+            }
+
+            if (age > 15 && age < 18)                                      //Расчёт идеального веса исходя из фиксированного весо-ростового коэффициента для возраста от 15 до 18
+            {
+                if (less15.Checked == true)
+                {
+                    koef = 315;
+                    
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (ot15do17.Checked == true)
+                {
+                    koef = 325;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (More17.Checked == true)
+                {
+                    koef = 355;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+            }
+
+            if (age > 19 && age < 25)                                     //Расчёт идеального веса исходя из фиксированного весо-ростового коэффициента для возраста от 19 до 25
+            {
+                if (less15.Checked == true)
+                {
+                    koef = 325;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (ot15do17.Checked == true)
+                {
+                    koef = 345;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (More17.Checked == true)
+                {
+                    koef = 370;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+            }
+
+            if (age > 26 && age < 40)                                      //Расчёт идеального веса исходя из фиксированного весо-ростового коэффициента для возраста от 26 до 40
+            {
+                if (less15.Checked == true)
+                {
+                    koef = 335;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (ot15do17.Checked == true)
+                {
+                    koef = 360;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+
+                if (More17.Checked == true)
+                {
+                    koef = 380;
+
+                    idealweight = (height * koef) / 1000;
+
+                    if (weight > idealweight)
+                    {
+                        Raznica = weight - idealweight;
+                    }
+                    else
+                    {
+                        Raznica = idealweight - weight;
+                    }
+
+                    ResultText.Text += "Ваш идеальный вес исходя из фиксированного весо-ростового коэффициента = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+                }
+            }
+            
+            if (Male.Checked == true)                                  //Формула Лоренца для расчёта идеального веса у мужчин
+            {
+                idealweight = height - 100 - ((height - 150) / 4);
+
+                if (weight > idealweight)
+                {
+                    Raznica = weight - idealweight;
+                }
+                else
+                {
+                    Raznica = idealweight - weight;
+                }
+
+                ResultText.Text += "Ваш идеальный вес по формуле Лоренца = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+            }
+
+            if (Female.Checked == true)                                //Формула Лоренца для расчёта идеального веса у женщин
+            {
+                idealweight = height - 100 - ((height - 150) / 2);
+
+                if (weight > idealweight)
+                {
+                    Raznica = weight - idealweight;
+                }
+                else
+                {
+                    Raznica = idealweight - weight;
+                }
+
+                ResultText.Text += "Ваш идеальный вес по формуле Лоренца = " + idealweight + "кг" + Environment.NewLine + "Разница с вашим весом " + Raznica + "кг" + Environment.NewLine + Environment.NewLine;
+            }
+
+            if (Male.Checked == true)                                  //Формула Тома Венуто для расчёта калорийности суточного рациона у мужчин
+            {
+                OBSR = 66 + (13.7 * weight) + (5 * height) - (6.8 * age);
+
+
+                if (Malaya.Checked == true)                           //Расход калорий у мужчин в зависимости от физической активности
+                {
+                    koef = 1.2;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (Ymerennaya.Checked == true)
+                {
+                    koef = 1.38;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (Visokaya.Checked == true)
+                {
+                    koef = 1.56;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (OchenVisokaya.Checked == true)
+                {
+                    koef = 1.73;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (Predelnaya.Checked == true)
+                {
+                    koef = 1.95;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+            }
+
+            if (Female.Checked == true)                                  //Формула Тома Венуто для расчёта калорийности суточного рациона у женщин
+            {
+                OBSR = 65 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+
+                if (Malaya.Checked == true)                              ////Расход калорий у женщин в зависимости от физической активности
+                {
+                    koef = 1.2;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (Ymerennaya.Checked == true)
+                {
+                    koef = 1.38;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (Visokaya.Checked == true)
+                {
+                    koef = 1.56;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (OchenVisokaya.Checked == true)
+                {
+                    koef = 1.73;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+
+                if (Predelnaya.Checked == true)
+                {
+                    koef = 1.95;
+
+                    RK = OBSR * koef;
+
+                    ResultText.Text += "Калорийность вашего основного обмена суточного рациона составляет = " + OBSR + "калл" + Environment.NewLine;
+                    ResultText.Text += "Ваш ежедневный расход калорий = " + RK + "калл" + Environment.NewLine;
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Clean_Click(object sender, EventArgs e)       //Кнопка очистить
-        {
-            CheckList.Clear();
-            FamilyPizza.Checked = false;
-            HavaiPizza.Checked = false;
-            MeatPizza.Checked = false;
-            PizzaBBQ.Checked = false;
-            CheesePizza.Checked = false;
-            BigMac.Checked = false;
-            Potato.Checked = false;
-            Royal.Checked = false;
-            BigTasty.Checked = false;
-            MacFlury.Checked = false;
-            CaliforniaRoll.Checked = false;
-            TempuraLosos.Checked = false;
-            FiladelfiaRoll.Checked = false;
-            SushiYgor.Checked = false;
-            SushiLosos.Checked = false;
-            Curier.Checked = false;
-            Curier_cycle.Checked = false;
-            Curier_car.Checked = false;
-            Curier_helicopter.Checked = false;
-        }
-
-        private void Check_Click(object sender, EventArgs e)
-        {
-            int itog;
-
-            if (FamilyPizza.Checked == true)
-            {
-                CheckList.Text += "Семейная пицца – 300 рублей" + Environment.NewLine;
-
-                FP = 300;
-            }
-
-            if (HavaiPizza.Checked == true)
-            {
-                CheckList.Text += "Гавайская пицца – 330 рублей" + Environment.NewLine;
-
-                HP = 330;
-            }
-
-            if (MeatPizza.Checked == true)
-            {
-                CheckList.Text += "Мясная пицца – 350 руб" + Environment.NewLine;
-
-                MP = 350;
-            }
-
-            if (PizzaBBQ.Checked == true)
-            {
-                CheckList.Text += "Пицца BBQ – 400 рублей" + Environment.NewLine;
-
-                BBQ = 400;
-            }
-
-            if (CheesePizza.Checked == true)
-            {
-                CheckList.Text += "Cырная пицца  – 280 рублей" + Environment.NewLine;
-
-                CP = 280;
-            }
-
-            if (BigMac.Checked == true)
-            {
-                CheckList.Text += "Биг мак – 140 рублей" + Environment.NewLine;
-
-                BM = 140;
-            }
-
-            if (Potato.Checked == true)
-            {
-                CheckList.Text += "Картофель фри – 100 рублей" + Environment.NewLine;
-
-                P = 100;
-            }
-
-            if (Royal.Checked == true)
-            {
-                CheckList.Text += "Роял бургер – 200 рублей" + Environment.NewLine;
-
-                R = 200;
-            }
-
-            if (BigTasty.Checked == true)
-            {
-                CheckList.Text += "Биг тэйсти – 250 рублей" + Environment.NewLine;
-
-                BT = 250;
-            }
-
-            if (MacFlury.Checked == true)
-            {
-                CheckList.Text += "Мак флури – 120 рублей" + Environment.NewLine;
-
-                MF = 120;
-            }
-
-            if (CaliforniaRoll.Checked == true)
-            {
-                CheckList.Text += "Калифорния ролл – 250 рублей" + Environment.NewLine;
-
-                CR = 250;
-            }
-
-            if (TempuraLosos.Checked == true)
-            {
-                CheckList.Text += "Темпура лосось – 300 рублей" + Environment.NewLine;
-
-                TL = 300;
-            }
-
-            if (FiladelfiaRoll.Checked == true)
-            {
-                CheckList.Text += "Филадельфия ролл – 300 рублей" + Environment.NewLine;
-
-                FR = 300;
-            }
-
-            if (SushiYgor.Checked == true)
-            {
-                CheckList.Text += "Суши с угрём – 80 рублей" + Environment.NewLine;
-
-                SY = 80;
-            }
-
-            if (SushiLosos.Checked == true)
-            {
-                CheckList.Text += "Суши с лососем – 80 рублей" + Environment.NewLine;
-
-                SL = 80;
-            }
-            
-            if (Curier.Checked == true)
-            {
-                CheckList.Text += "Доставка – Бесплатно" + Environment.NewLine;
-
-                DCurier = 0;
-            }
-            
-            if (Curier_cycle.Checked == true)
-            {
-                CheckList.Text += "Доставка – 100 рублей" + Environment.NewLine;
-
-                DCycle = 100;
-            }
-            
-            if (Curier_car.Checked == true)
-            {
-                CheckList.Text += "Доставка – 250 рублей" + Environment.NewLine;
-
-                DCar = 250;
-            }
-            
-            if (Curier_helicopter.Checked == true)
-            {
-                CheckList.Text += "Доставка – 5000 рублей" + Environment.NewLine;
-
-                DHelicopter = 5000;  
-            }
-            
-            itog = FP + HP + MP + BBQ + CP + BM + P + R + BT + MF + CR + TL + FR + SY + SL + DCurier + DCycle + DCar + DHelicopter;
-
-            CheckList.Text += "Итог:" + itog + "рублей";
-        } 
     }
 }

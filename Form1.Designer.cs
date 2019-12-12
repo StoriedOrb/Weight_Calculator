@@ -1,6 +1,6 @@
-﻿namespace Create_your_lunch
+﻿namespace WeightCalculator
 {
-    partial class Create_your_lunch
+    partial class Form1
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,359 +28,305 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Pizza = new System.Windows.Forms.GroupBox();
-            this.FamilyPizza = new System.Windows.Forms.CheckBox();
-            this.HavaiPizza = new System.Windows.Forms.CheckBox();
-            this.MeatPizza = new System.Windows.Forms.CheckBox();
-            this.CheesePizza = new System.Windows.Forms.CheckBox();
-            this.PizzaBBQ = new System.Windows.Forms.CheckBox();
-            this.Fastfood = new System.Windows.Forms.GroupBox();
-            this.Royal = new System.Windows.Forms.CheckBox();
-            this.BigMac = new System.Windows.Forms.CheckBox();
-            this.Potato = new System.Windows.Forms.CheckBox();
-            this.MacFlury = new System.Windows.Forms.CheckBox();
-            this.BigTasty = new System.Windows.Forms.CheckBox();
-            this.Sushi = new System.Windows.Forms.GroupBox();
-            this.CaliforniaRoll = new System.Windows.Forms.CheckBox();
-            this.TempuraLosos = new System.Windows.Forms.CheckBox();
-            this.FiladelfiaRoll = new System.Windows.Forms.CheckBox();
-            this.SushiYgor = new System.Windows.Forms.CheckBox();
-            this.SushiLosos = new System.Windows.Forms.CheckBox();
-            this.Delivery = new System.Windows.Forms.GroupBox();
-            this.CheckList = new System.Windows.Forms.TextBox();
-            this.Check = new System.Windows.Forms.Button();
-            this.Clean = new System.Windows.Forms.Button();
-            this.Exit = new System.Windows.Forms.Button();
-            this.Curier = new System.Windows.Forms.RadioButton();
-            this.Curier_cycle = new System.Windows.Forms.RadioButton();
-            this.Curier_car = new System.Windows.Forms.RadioButton();
-            this.Curier_helicopter = new System.Windows.Forms.RadioButton();
-            this.Pizza.SuspendLayout();
-            this.Fastfood.SuspendLayout();
-            this.Sushi.SuspendLayout();
-            this.Delivery.SuspendLayout();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Male = new System.Windows.Forms.RadioButton();
+            this.Female = new System.Windows.Forms.RadioButton();
+            this.ResultButton = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.More17 = new System.Windows.Forms.RadioButton();
+            this.less15 = new System.Windows.Forms.RadioButton();
+            this.ot15do17 = new System.Windows.Forms.RadioButton();
+            this.Age = new System.Windows.Forms.TextBox();
+            this.Height = new System.Windows.Forms.TextBox();
+            this.Weight = new System.Windows.Forms.TextBox();
+            this.ResultText = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PhysicalActivity = new System.Windows.Forms.GroupBox();
+            this.Malaya = new System.Windows.Forms.RadioButton();
+            this.Ymerennaya = new System.Windows.Forms.RadioButton();
+            this.Visokaya = new System.Windows.Forms.RadioButton();
+            this.OchenVisokaya = new System.Windows.Forms.RadioButton();
+            this.Predelnaya = new System.Windows.Forms.RadioButton();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.PhysicalActivity.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Pizza
+            // groupBox3
             // 
-            this.Pizza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.Pizza.Controls.Add(this.FamilyPizza);
-            this.Pizza.Controls.Add(this.HavaiPizza);
-            this.Pizza.Controls.Add(this.MeatPizza);
-            this.Pizza.Controls.Add(this.CheesePizza);
-            this.Pizza.Controls.Add(this.PizzaBBQ);
-            this.Pizza.Location = new System.Drawing.Point(12, 12);
-            this.Pizza.Name = "Pizza";
-            this.Pizza.Size = new System.Drawing.Size(211, 284);
-            this.Pizza.TabIndex = 0;
-            this.Pizza.TabStop = false;
-            this.Pizza.Text = "Граф Краснов(Пиццерия)";
+            this.groupBox3.BackColor = System.Drawing.Color.Orange;
+            this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.groupBox3.Controls.Add(this.Male);
+            this.groupBox3.Controls.Add(this.Female);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(21, 148);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(228, 69);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Кто вы?";
             // 
-            // FamilyPizza
+            // Male
             // 
-            this.FamilyPizza.AutoSize = true;
-            this.FamilyPizza.Location = new System.Drawing.Point(6, 19);
-            this.FamilyPizza.Name = "FamilyPizza";
-            this.FamilyPizza.Size = new System.Drawing.Size(160, 17);
-            this.FamilyPizza.TabIndex = 34;
-            this.FamilyPizza.Text = "Семейная пицца (300 руб.)";
-            this.FamilyPizza.UseVisualStyleBackColor = true;
+            this.Male.AutoSize = true;
+            this.Male.ForeColor = System.Drawing.Color.Black;
+            this.Male.Location = new System.Drawing.Point(17, 19);
+            this.Male.Name = "Male";
+            this.Male.Size = new System.Drawing.Size(70, 17);
+            this.Male.TabIndex = 4;
+            this.Male.TabStop = true;
+            this.Male.Text = "Мужчина";
+            this.Male.UseVisualStyleBackColor = true;
+            this.Male.CheckedChanged += new System.EventHandler(this.Male_CheckedChanged);
             // 
-            // HavaiPizza
+            // Female
             // 
-            this.HavaiPizza.AutoSize = true;
-            this.HavaiPizza.Location = new System.Drawing.Point(6, 77);
-            this.HavaiPizza.Name = "HavaiPizza";
-            this.HavaiPizza.Size = new System.Drawing.Size(163, 17);
-            this.HavaiPizza.TabIndex = 35;
-            this.HavaiPizza.Text = "Гавайская пицца (330 руб.)";
-            this.HavaiPizza.UseVisualStyleBackColor = true;
+            this.Female.AutoSize = true;
+            this.Female.ForeColor = System.Drawing.Color.Black;
+            this.Female.Location = new System.Drawing.Point(14, 42);
+            this.Female.Name = "Female";
+            this.Female.Size = new System.Drawing.Size(75, 17);
+            this.Female.TabIndex = 3;
+            this.Female.TabStop = true;
+            this.Female.Text = "Женщина";
+            this.Female.UseVisualStyleBackColor = true;
             // 
-            // MeatPizza
+            // ResultButton
             // 
-            this.MeatPizza.AutoSize = true;
-            this.MeatPizza.Location = new System.Drawing.Point(6, 138);
-            this.MeatPizza.Name = "MeatPizza";
-            this.MeatPizza.Size = new System.Drawing.Size(148, 17);
-            this.MeatPizza.TabIndex = 36;
-            this.MeatPizza.Text = "Мясная пицца (350 руб.)";
-            this.MeatPizza.UseVisualStyleBackColor = true;
+            this.ResultButton.ForeColor = System.Drawing.Color.Black;
+            this.ResultButton.Location = new System.Drawing.Point(299, 403);
+            this.ResultButton.Name = "ResultButton";
+            this.ResultButton.Size = new System.Drawing.Size(286, 56);
+            this.ResultButton.TabIndex = 31;
+            this.ResultButton.Text = "Выполнить исследование";
+            this.ResultButton.UseVisualStyleBackColor = true;
+            this.ResultButton.Click += new System.EventHandler(this.ResultButton_Click);
             // 
-            // CheesePizza
+            // groupBox4
             // 
-            this.CheesePizza.AutoSize = true;
-            this.CheesePizza.Location = new System.Drawing.Point(6, 261);
-            this.CheesePizza.Name = "CheesePizza";
-            this.CheesePizza.Size = new System.Drawing.Size(148, 17);
-            this.CheesePizza.TabIndex = 38;
-            this.CheesePizza.Text = "Cырная пицца (280 руб.)";
-            this.CheesePizza.UseVisualStyleBackColor = true;
+            this.groupBox4.BackColor = System.Drawing.Color.Orange;
+            this.groupBox4.Controls.Add(this.More17);
+            this.groupBox4.Controls.Add(this.less15);
+            this.groupBox4.Controls.Add(this.ot15do17);
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(21, 223);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(228, 92);
+            this.groupBox4.TabIndex = 29;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Запястье";
             // 
-            // PizzaBBQ
+            // More17
             // 
-            this.PizzaBBQ.AutoSize = true;
-            this.PizzaBBQ.Location = new System.Drawing.Point(6, 204);
-            this.PizzaBBQ.Name = "PizzaBBQ";
-            this.PizzaBBQ.Size = new System.Drawing.Size(133, 17);
-            this.PizzaBBQ.TabIndex = 37;
-            this.PizzaBBQ.Text = "Пицца BBQ (400 руб.)";
-            this.PizzaBBQ.UseVisualStyleBackColor = true;
+            this.More17.AutoSize = true;
+            this.More17.ForeColor = System.Drawing.Color.Black;
+            this.More17.Location = new System.Drawing.Point(11, 65);
+            this.More17.Name = "More17";
+            this.More17.Size = new System.Drawing.Size(96, 17);
+            this.More17.TabIndex = 2;
+            this.More17.TabStop = true;
+            this.More17.Text = "Больше 17 см";
+            this.More17.UseVisualStyleBackColor = true;
             // 
-            // Fastfood
+            // less15
             // 
-            this.Fastfood.BackColor = System.Drawing.Color.Lavender;
-            this.Fastfood.Controls.Add(this.Royal);
-            this.Fastfood.Controls.Add(this.BigMac);
-            this.Fastfood.Controls.Add(this.Potato);
-            this.Fastfood.Controls.Add(this.MacFlury);
-            this.Fastfood.Controls.Add(this.BigTasty);
-            this.Fastfood.Location = new System.Drawing.Point(229, 12);
-            this.Fastfood.Name = "Fastfood";
-            this.Fastfood.Size = new System.Drawing.Size(189, 284);
-            this.Fastfood.TabIndex = 1;
-            this.Fastfood.TabStop = false;
-            this.Fastfood.Text = "Mc\'Donalds(Фастфуд)";
-            this.Fastfood.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.less15.AutoSize = true;
+            this.less15.ForeColor = System.Drawing.Color.Black;
+            this.less15.Location = new System.Drawing.Point(11, 19);
+            this.less15.Name = "less15";
+            this.less15.Size = new System.Drawing.Size(98, 17);
+            this.less15.TabIndex = 1;
+            this.less15.TabStop = true;
+            this.less15.Text = "Меньше 15 см";
+            this.less15.UseVisualStyleBackColor = true;
             // 
-            // Royal
+            // ot15do17
             // 
-            this.Royal.AutoSize = true;
-            this.Royal.Location = new System.Drawing.Point(6, 138);
-            this.Royal.Name = "Royal";
-            this.Royal.Size = new System.Drawing.Size(138, 17);
-            this.Royal.TabIndex = 28;
-            this.Royal.Text = "Роял бургер (200 руб.)";
-            this.Royal.UseVisualStyleBackColor = true;
+            this.ot15do17.AutoSize = true;
+            this.ot15do17.ForeColor = System.Drawing.Color.Black;
+            this.ot15do17.Location = new System.Drawing.Point(11, 42);
+            this.ot15do17.Name = "ot15do17";
+            this.ot15do17.Size = new System.Drawing.Size(103, 17);
+            this.ot15do17.TabIndex = 0;
+            this.ot15do17.TabStop = true;
+            this.ot15do17.Text = "От 15 до 17 см ";
+            this.ot15do17.UseVisualStyleBackColor = true;
             // 
-            // BigMac
+            // Age
             // 
-            this.BigMac.AutoSize = true;
-            this.BigMac.Location = new System.Drawing.Point(6, 19);
-            this.BigMac.Name = "BigMac";
-            this.BigMac.Size = new System.Drawing.Size(117, 17);
-            this.BigMac.TabIndex = 26;
-            this.BigMac.Text = "Биг мак (140 руб.)";
-            this.BigMac.UseVisualStyleBackColor = true;
+            this.Age.ForeColor = System.Drawing.Color.Black;
+            this.Age.Location = new System.Drawing.Point(114, 110);
+            this.Age.Name = "Age";
+            this.Age.Size = new System.Drawing.Size(135, 20);
+            this.Age.TabIndex = 28;
             // 
-            // Potato
+            // Height
             // 
-            this.Potato.AutoSize = true;
-            this.Potato.Location = new System.Drawing.Point(6, 77);
-            this.Potato.Name = "Potato";
-            this.Potato.Size = new System.Drawing.Size(155, 17);
-            this.Potato.TabIndex = 27;
-            this.Potato.Text = "Картофель фри (100 руб.)";
-            this.Potato.UseVisualStyleBackColor = true;
+            this.Height.ForeColor = System.Drawing.Color.Black;
+            this.Height.Location = new System.Drawing.Point(114, 73);
+            this.Height.Name = "Height";
+            this.Height.Size = new System.Drawing.Size(135, 20);
+            this.Height.TabIndex = 27;
             // 
-            // MacFlury
+            // Weight
             // 
-            this.MacFlury.AutoSize = true;
-            this.MacFlury.Location = new System.Drawing.Point(6, 261);
-            this.MacFlury.Name = "MacFlury";
-            this.MacFlury.Size = new System.Drawing.Size(131, 17);
-            this.MacFlury.TabIndex = 30;
-            this.MacFlury.Text = "Мак флури (120 руб.)";
-            this.MacFlury.UseVisualStyleBackColor = true;
+            this.Weight.ForeColor = System.Drawing.Color.Black;
+            this.Weight.Location = new System.Drawing.Point(114, 32);
+            this.Weight.Name = "Weight";
+            this.Weight.Size = new System.Drawing.Size(135, 20);
+            this.Weight.TabIndex = 26;
             // 
-            // BigTasty
+            // ResultText
             // 
-            this.BigTasty.AutoSize = true;
-            this.BigTasty.Location = new System.Drawing.Point(6, 204);
-            this.BigTasty.Name = "BigTasty";
-            this.BigTasty.Size = new System.Drawing.Size(131, 17);
-            this.BigTasty.TabIndex = 29;
-            this.BigTasty.Text = "Биг тэйсти (250 руб.)";
-            this.BigTasty.UseVisualStyleBackColor = true;
+            this.ResultText.ForeColor = System.Drawing.Color.Black;
+            this.ResultText.Location = new System.Drawing.Point(299, 37);
+            this.ResultText.Multiline = true;
+            this.ResultText.Name = "ResultText";
+            this.ResultText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ResultText.Size = new System.Drawing.Size(286, 360);
+            this.ResultText.TabIndex = 25;
             // 
-            // Sushi
+            // label4
             // 
-            this.Sushi.BackColor = System.Drawing.Color.PapayaWhip;
-            this.Sushi.Controls.Add(this.CaliforniaRoll);
-            this.Sushi.Controls.Add(this.TempuraLosos);
-            this.Sushi.Controls.Add(this.FiladelfiaRoll);
-            this.Sushi.Controls.Add(this.SushiYgor);
-            this.Sushi.Controls.Add(this.SushiLosos);
-            this.Sushi.Location = new System.Drawing.Point(424, 12);
-            this.Sushi.Name = "Sushi";
-            this.Sushi.Size = new System.Drawing.Size(189, 284);
-            this.Sushi.TabIndex = 1;
-            this.Sushi.TabStop = false;
-            this.Sushi.Text = "Важная рыба(Суши и роллы)";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label4.ForeColor = System.Drawing.Color.PeachPuff;
+            this.label4.Location = new System.Drawing.Point(294, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(216, 25);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Результаты расчетов";
             // 
-            // CaliforniaRoll
+            // label5
             // 
-            this.CaliforniaRoll.AutoSize = true;
-            this.CaliforniaRoll.Location = new System.Drawing.Point(6, 19);
-            this.CaliforniaRoll.Name = "CaliforniaRoll";
-            this.CaliforniaRoll.Size = new System.Drawing.Size(166, 17);
-            this.CaliforniaRoll.TabIndex = 18;
-            this.CaliforniaRoll.Text = "Калифорния ролл (250 руб.)";
-            this.CaliforniaRoll.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.PeachPuff;
+            this.label5.Location = new System.Drawing.Point(18, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Возраст";
             // 
-            // TempuraLosos
+            // label6
             // 
-            this.TempuraLosos.AutoSize = true;
-            this.TempuraLosos.Location = new System.Drawing.Point(6, 77);
-            this.TempuraLosos.Name = "TempuraLosos";
-            this.TempuraLosos.Size = new System.Drawing.Size(159, 17);
-            this.TempuraLosos.TabIndex = 19;
-            this.TempuraLosos.Text = "Темпура лосось (300 руб.)";
-            this.TempuraLosos.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.PeachPuff;
+            this.label6.Location = new System.Drawing.Point(18, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Рост (см)";
             // 
-            // FiladelfiaRoll
+            // label7
             // 
-            this.FiladelfiaRoll.AutoSize = true;
-            this.FiladelfiaRoll.Location = new System.Drawing.Point(6, 138);
-            this.FiladelfiaRoll.Name = "FiladelfiaRoll";
-            this.FiladelfiaRoll.Size = new System.Drawing.Size(176, 17);
-            this.FiladelfiaRoll.TabIndex = 20;
-            this.FiladelfiaRoll.Text = "Филадельфия ролл (300 руб.)";
-            this.FiladelfiaRoll.UseVisualStyleBackColor = true;
-            this.FiladelfiaRoll.CheckedChanged += new System.EventHandler(this.checkBox37_CheckedChanged);
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.PeachPuff;
+            this.label7.Location = new System.Drawing.Point(18, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Вес (кг)";
             // 
-            // SushiYgor
+            // PhysicalActivity
             // 
-            this.SushiYgor.AutoSize = true;
-            this.SushiYgor.Location = new System.Drawing.Point(6, 204);
-            this.SushiYgor.Name = "SushiYgor";
-            this.SushiYgor.Size = new System.Drawing.Size(138, 17);
-            this.SushiYgor.TabIndex = 22;
-            this.SushiYgor.Text = "Суши с угрём (80 руб.)";
-            this.SushiYgor.UseVisualStyleBackColor = true;
+            this.PhysicalActivity.BackColor = System.Drawing.Color.Orange;
+            this.PhysicalActivity.Controls.Add(this.Predelnaya);
+            this.PhysicalActivity.Controls.Add(this.OchenVisokaya);
+            this.PhysicalActivity.Controls.Add(this.Visokaya);
+            this.PhysicalActivity.Controls.Add(this.Ymerennaya);
+            this.PhysicalActivity.Controls.Add(this.Malaya);
+            this.PhysicalActivity.Location = new System.Drawing.Point(21, 321);
+            this.PhysicalActivity.Name = "PhysicalActivity";
+            this.PhysicalActivity.Size = new System.Drawing.Size(228, 138);
+            this.PhysicalActivity.TabIndex = 32;
+            this.PhysicalActivity.TabStop = false;
+            this.PhysicalActivity.Text = "Физическая активность";
             // 
-            // SushiLosos
+            // Malaya
             // 
-            this.SushiLosos.AutoSize = true;
-            this.SushiLosos.Location = new System.Drawing.Point(6, 261);
-            this.SushiLosos.Name = "SushiLosos";
-            this.SushiLosos.Size = new System.Drawing.Size(152, 17);
-            this.SushiLosos.TabIndex = 23;
-            this.SushiLosos.Text = "Суши с лососем (80 руб.)";
-            this.SushiLosos.UseVisualStyleBackColor = true;
+            this.Malaya.AutoSize = true;
+            this.Malaya.Location = new System.Drawing.Point(6, 19);
+            this.Malaya.Name = "Malaya";
+            this.Malaya.Size = new System.Drawing.Size(58, 17);
+            this.Malaya.TabIndex = 33;
+            this.Malaya.TabStop = true;
+            this.Malaya.Text = "Малая";
+            this.Malaya.UseVisualStyleBackColor = true;
             // 
-            // Delivery
+            // Ymerennaya
             // 
-            this.Delivery.BackColor = System.Drawing.Color.MistyRose;
-            this.Delivery.Controls.Add(this.Curier_helicopter);
-            this.Delivery.Controls.Add(this.Curier_car);
-            this.Delivery.Controls.Add(this.Curier_cycle);
-            this.Delivery.Controls.Add(this.Curier);
-            this.Delivery.Location = new System.Drawing.Point(619, 12);
-            this.Delivery.Name = "Delivery";
-            this.Delivery.Size = new System.Drawing.Size(193, 105);
-            this.Delivery.TabIndex = 3;
-            this.Delivery.TabStop = false;
-            this.Delivery.Text = "Способ доставки";
+            this.Ymerennaya.AutoSize = true;
+            this.Ymerennaya.Location = new System.Drawing.Point(6, 42);
+            this.Ymerennaya.Name = "Ymerennaya";
+            this.Ymerennaya.Size = new System.Drawing.Size(83, 17);
+            this.Ymerennaya.TabIndex = 34;
+            this.Ymerennaya.TabStop = true;
+            this.Ymerennaya.Text = "Умеренная";
+            this.Ymerennaya.UseVisualStyleBackColor = true;
             // 
-            // CheckList
+            // Visokaya
             // 
-            this.CheckList.Location = new System.Drawing.Point(619, 123);
-            this.CheckList.Multiline = true;
-            this.CheckList.Name = "CheckList";
-            this.CheckList.ReadOnly = true;
-            this.CheckList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CheckList.Size = new System.Drawing.Size(190, 173);
-            this.CheckList.TabIndex = 4;
-            this.CheckList.UseWaitCursor = true;
+            this.Visokaya.AutoSize = true;
+            this.Visokaya.Location = new System.Drawing.Point(6, 65);
+            this.Visokaya.Name = "Visokaya";
+            this.Visokaya.Size = new System.Drawing.Size(70, 17);
+            this.Visokaya.TabIndex = 35;
+            this.Visokaya.TabStop = true;
+            this.Visokaya.Text = "Высокая";
+            this.Visokaya.UseVisualStyleBackColor = true;
             // 
-            // Check
+            // OchenVisokaya
             // 
-            this.Check.Location = new System.Drawing.Point(12, 302);
-            this.Check.Name = "Check";
-            this.Check.Size = new System.Drawing.Size(281, 31);
-            this.Check.TabIndex = 5;
-            this.Check.Text = "Расчёт";
-            this.Check.UseVisualStyleBackColor = true;
-            this.Check.Click += new System.EventHandler(this.Check_Click);
+            this.OchenVisokaya.AutoSize = true;
+            this.OchenVisokaya.Location = new System.Drawing.Point(6, 88);
+            this.OchenVisokaya.Name = "OchenVisokaya";
+            this.OchenVisokaya.Size = new System.Drawing.Size(103, 17);
+            this.OchenVisokaya.TabIndex = 36;
+            this.OchenVisokaya.TabStop = true;
+            this.OchenVisokaya.Text = "Очень высокая";
+            this.OchenVisokaya.UseVisualStyleBackColor = true;
             // 
-            // Clean
+            // Predelnaya
             // 
-            this.Clean.Location = new System.Drawing.Point(299, 302);
-            this.Clean.Name = "Clean";
-            this.Clean.Size = new System.Drawing.Size(292, 31);
-            this.Clean.TabIndex = 6;
-            this.Clean.Text = "Очистить";
-            this.Clean.UseVisualStyleBackColor = true;
-            this.Clean.Click += new System.EventHandler(this.Clean_Click);
+            this.Predelnaya.AutoSize = true;
+            this.Predelnaya.Location = new System.Drawing.Point(6, 111);
+            this.Predelnaya.Name = "Predelnaya";
+            this.Predelnaya.Size = new System.Drawing.Size(87, 17);
+            this.Predelnaya.TabIndex = 37;
+            this.Predelnaya.TabStop = true;
+            this.Predelnaya.Text = "Предельная";
+            this.Predelnaya.UseVisualStyleBackColor = true;
             // 
-            // Exit
-            // 
-            this.Exit.Location = new System.Drawing.Point(597, 302);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(215, 31);
-            this.Exit.TabIndex = 7;
-            this.Exit.Text = "Выход";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // Curier
-            // 
-            this.Curier.AutoSize = true;
-            this.Curier.Location = new System.Drawing.Point(6, 18);
-            this.Curier.Name = "Curier";
-            this.Curier.Size = new System.Drawing.Size(160, 17);
-            this.Curier.TabIndex = 0;
-            this.Curier.TabStop = true;
-            this.Curier.Text = "Пеший курьер (Бесплатно)";
-            this.Curier.UseVisualStyleBackColor = true;
-            // 
-            // Curier_cycle
-            // 
-            this.Curier_cycle.AutoSize = true;
-            this.Curier_cycle.Location = new System.Drawing.Point(6, 41);
-            this.Curier_cycle.Name = "Curier_cycle";
-            this.Curier_cycle.Size = new System.Drawing.Size(189, 17);
-            this.Curier_cycle.TabIndex = 1;
-            this.Curier_cycle.TabStop = true;
-            this.Curier_cycle.Text = "Курьер на велосипеде (100 руб.)";
-            this.Curier_cycle.UseVisualStyleBackColor = true;
-            // 
-            // Curier_car
-            // 
-            this.Curier_car.AutoSize = true;
-            this.Curier_car.Location = new System.Drawing.Point(6, 64);
-            this.Curier_car.Name = "Curier_car";
-            this.Curier_car.Size = new System.Drawing.Size(169, 17);
-            this.Curier_car.TabIndex = 2;
-            this.Curier_car.TabStop = true;
-            this.Curier_car.Text = "Курьер на машине (250 руб.)";
-            this.Curier_car.UseVisualStyleBackColor = true;
-            // 
-            // Curier_helicopter
-            // 
-            this.Curier_helicopter.AutoSize = true;
-            this.Curier_helicopter.Location = new System.Drawing.Point(6, 87);
-            this.Curier_helicopter.Name = "Curier_helicopter";
-            this.Curier_helicopter.Size = new System.Drawing.Size(187, 17);
-            this.Curier_helicopter.TabIndex = 3;
-            this.Curier_helicopter.TabStop = true;
-            this.Curier_helicopter.Text = "Курьер на вертолете (5000 руб.)";
-            this.Curier_helicopter.UseVisualStyleBackColor = true;
-            // 
-            // Create_your_lunch
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(823, 343);
-            this.Controls.Add(this.Fastfood);
-            this.Controls.Add(this.Pizza);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.Sushi);
-            this.Controls.Add(this.Clean);
-            this.Controls.Add(this.Check);
-            this.Controls.Add(this.CheckList);
-            this.Controls.Add(this.Delivery);
-            this.Name = "Create_your_lunch";
-            this.Text = "Доставка обеда";
-            this.Pizza.ResumeLayout(false);
-            this.Pizza.PerformLayout();
-            this.Fastfood.ResumeLayout(false);
-            this.Fastfood.PerformLayout();
-            this.Sushi.ResumeLayout(false);
-            this.Sushi.PerformLayout();
-            this.Delivery.ResumeLayout(false);
-            this.Delivery.PerformLayout();
+            this.BackColor = System.Drawing.Color.DarkBlue;
+            this.ClientSize = new System.Drawing.Size(597, 477);
+            this.Controls.Add(this.PhysicalActivity);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.ResultButton);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.Age);
+            this.Controls.Add(this.Height);
+            this.Controls.Add(this.Weight);
+            this.Controls.Add(this.ResultText);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Name = "Form1";
+            this.Text = "Калькулятор веса";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.PhysicalActivity.ResumeLayout(false);
+            this.PhysicalActivity.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,33 +334,28 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox Pizza;
-        private System.Windows.Forms.GroupBox Fastfood;
-        private System.Windows.Forms.GroupBox Sushi;
-        private System.Windows.Forms.GroupBox Delivery;
-        private System.Windows.Forms.TextBox CheckList;
-        private System.Windows.Forms.Button Check;
-        private System.Windows.Forms.Button Clean;
-        private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.CheckBox CaliforniaRoll;
-        private System.Windows.Forms.CheckBox TempuraLosos;
-        private System.Windows.Forms.CheckBox FiladelfiaRoll;
-        private System.Windows.Forms.CheckBox SushiYgor;
-        private System.Windows.Forms.CheckBox SushiLosos;
-        private System.Windows.Forms.CheckBox FamilyPizza;
-        private System.Windows.Forms.CheckBox HavaiPizza;
-        private System.Windows.Forms.CheckBox MeatPizza;
-        private System.Windows.Forms.CheckBox CheesePizza;
-        private System.Windows.Forms.CheckBox PizzaBBQ;
-        private System.Windows.Forms.CheckBox Royal;
-        private System.Windows.Forms.CheckBox BigMac;
-        private System.Windows.Forms.CheckBox Potato;
-        private System.Windows.Forms.CheckBox MacFlury;
-        private System.Windows.Forms.CheckBox BigTasty;
-        private System.Windows.Forms.RadioButton Curier_helicopter;
-        private System.Windows.Forms.RadioButton Curier_car;
-        private System.Windows.Forms.RadioButton Curier_cycle;
-        private System.Windows.Forms.RadioButton Curier;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton Male;
+        private System.Windows.Forms.RadioButton Female;
+        private System.Windows.Forms.Button ResultButton;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton More17;
+        private System.Windows.Forms.RadioButton less15;
+        private System.Windows.Forms.RadioButton ot15do17;
+        private System.Windows.Forms.TextBox Age;
+        private System.Windows.Forms.TextBox Height;
+        private System.Windows.Forms.TextBox Weight;
+        private System.Windows.Forms.TextBox ResultText;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox PhysicalActivity;
+        private System.Windows.Forms.RadioButton Predelnaya;
+        private System.Windows.Forms.RadioButton OchenVisokaya;
+        private System.Windows.Forms.RadioButton Visokaya;
+        private System.Windows.Forms.RadioButton Ymerennaya;
+        private System.Windows.Forms.RadioButton Malaya;
     }
 }
 

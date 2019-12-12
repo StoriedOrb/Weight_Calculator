@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Create_your_lunch
+namespace WeightCalculator
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Create_your_lunch
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Create_your_lunch());
+            Application.Run(new Form1());
         }
     }
 }
